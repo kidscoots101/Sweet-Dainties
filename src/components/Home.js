@@ -243,7 +243,7 @@ export default function Home() {
         />
       </div>
         
-      <footer className="footer" style={{ textAlign: 'center', fontWeight :'bold' }}>
+      <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
     &copy; 2023 Sweet Dainties <br />
          <div style={{ marginTop: '10px' }}>
                 <a href="https://www.instagram.com/sweet.dainties/s" style={{ ...iconStyle, color: '#e4405f' }}>
@@ -253,7 +253,7 @@ export default function Home() {
                     <FaFacebook />
                 </a>
             </div>
-          <text style={{fontSize: 14}}>Done by Caleb Han</text>
+          <text style={{fontSize: 14, fontWeight: '500'}}>Done by Caleb Han</text>
 </footer>
 
     </div>
