@@ -6,7 +6,7 @@ import product1 from "../assets/walnut-fruit-cake.png";
 import product2 from "../assets/chewy chocolate.png";
 import product3 from "../assets/assorted-muffins.png";
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const ProductShowcase = ({
   products,
@@ -69,27 +69,7 @@ const ProductShowcase = ({
   );
 };
 
-const CartItem = ({
-  item,
-  removeFromCart,
-  increaseQuantity,
-  decreaseQuantity,
-}) => {
-  return (
-    <div className="cart-item">
-      <div className="cart-item-details">
-        <h4>{item.name}</h4>
-        <p>Price: ${item.price}</p>
-        <p>Quantity: {item.quantity}</p>
-      </div>
-      <div className="cart-item-controls">
-        <button onClick={() => decreaseQuantity(item.id)}>-</button>
-        <button onClick={() => increaseQuantity(item.id)}>+</button>
-        <button onClick={() => removeFromCart(item.id)}>Remove</button>
-      </div>
-    </div>
-  );
-};
+
 
 export default function Home() {
   const products = [
