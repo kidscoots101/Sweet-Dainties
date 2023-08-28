@@ -5,6 +5,9 @@ import cart from "../assets/cart.png";
 import product1 from "../assets/walnut-fruit-cake.png";
 import product2 from "../assets/chewy chocolate.png";
 import product3 from "../assets/assorted-muffins.png";
+import product4 from '../assets/coconut-jelly.jpeg'
+import product5 from '../assets/osmanthus-jelly.jpeg'
+import product6 from '../assets/walnut-choc.jpeg'
 import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
@@ -91,30 +94,17 @@ export default function Home() {
       image: product3,
       price: "1.99",
     },
-    { id: 1, name: "Walnut Fruit Cake", image: product1, price: "24.99" },
+    { id: 4, name: "Coconut Jelly", image: product4, price: "5.99" },
     {
-      id: 2,
-      name: "Big Chewy Chocolate Chip Cookie",
-      image: product2,
+      id: 5,
+      name: "Orthmantus Jelly",
+      image: product5,
       price: "7.99",
     },
     {
-      id: 3,
-      name: "Assorted Muffins",
-      image: product3,
-      price: "1.99",
-    },
-    { id: 1, name: "Walnut Fruit Cake", image: product1, price: "24.99" },
-    {
-      id: 2,
-      name: "Big Chewy Chocolate Chip Cookie",
-      image: product2,
-      price: "7.99",
-    },
-    {
-      id: 3,
-      name: "Assorted Muffins",
-      image: product3,
+      id: 6,
+      name: "Walnut Chocolate Chip Cake",
+      image: product6,
       price: "1.99",
     },
   ];
