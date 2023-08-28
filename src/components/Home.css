@@ -1,0 +1,140 @@
+/* Home.css */
+.home-container {
+    background-color: #fffcf4; 
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column; /* Change to column layout for mobile */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the header horizontally */
+  }
+  
+  .logo {
+    max-width: 100px; /* Adjust the width of the logo as needed */
+    margin-bottom: 10px; /* Add spacing between logo and text */
+  }
+  
+  .cart {
+    max-width: 25px;
+  }
+  .cart-button {
+  padding: 8px 16px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button.added-to-cart {
+  background-color: #dc3545; /* Change color when item is in cart */
+}
+
+/* Additional styles for the quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.quantity-button {
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.quantity {
+  margin: 0 8px;
+}
+  .navcart {
+    font-weight: bold;
+  }
+  
+  .cartwrapper {
+    display: flex;
+    flex-direction: column; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 10px; /* Add spacing above cart */
+  }
+  .product-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e53935;
+  }
+  
+  .product-button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .product-button:hover {
+    background-color: #c62828;
+  }
+  
+  @media (min-width: 768px) {
+    /* Apply these styles only when the screen width is 768px or larger (tablet and above) */
+    .header {
+      flex-direction: row; /* Revert to row layout for tablet and above */
+      justify-content: space-between; /* Align items to the start and end of the header */
+    }
+  
+    .logo {
+      margin-bottom: 0; /* Reset margin for tablet and above */
+    }
+    
+  }
+  
