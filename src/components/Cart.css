@@ -1,4 +1,3 @@
-/* Cart.css */
 .cart-container {
     padding: 20px;
     background-color: #fffcf4;
@@ -26,6 +25,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+  }
+
+  .total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
   }
   
   .cart-item {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import './Cart.css'
 
@@ -11,6 +11,10 @@ const Cart = () => {
       setCartItems(JSON.parse(storedCartItems));
     }
   }, []);
+
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
 
   return (
     <div className="cart-container">
@@ -32,6 +36,7 @@ const Cart = () => {
                 </div>
               </div>
             ))}
+            <p className="total-price">Total Price: ${calculateTotalPrice()}</p>
           </div>
         )}
       </div>
