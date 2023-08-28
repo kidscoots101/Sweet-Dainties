@@ -22,52 +22,44 @@
     max-width: 25px;
   }
   .cart-button {
-  padding: 8px 16px;
-  background-color: #e53935;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-.cart-counter {
-    font-weight: bold;
-}
-
-.cart-button.added-to-cart {
-  background-color: #dc3545; /* Change color when item is in cart */
-}
-
-/* Additional styles for the quantity controls */
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.quantity-button {
-  padding: 4px 8px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  margin: 0 4px;
-}
-
-.quantity {
-  margin: 0 8px;
-}
-  .navcart {
+    padding: 8px 16px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-counter {
     font-weight: bold;
   }
   
-  .cartwrapper {
-    display: flex;
-    flex-direction: column; /* Align items horizontally */
-    align-items: center; /* Center items vertically */
-    margin-top: 10px; /* Add spacing above cart */
+  .cart-button.added-to-cart {
+    background-color: #dc3545;
   }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .quantity-button {
+    padding: 4px 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 4px;
+  }
+  
+  .quantity {
+    margin: 0 8px;
+  }
+  
+  /* Additional styles for the product showcase */
   .product-showcase {
     display: flex;
     flex-wrap: wrap;
@@ -79,12 +71,13 @@
   .product-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
+    width: 100%; 
+    max-width: 300px; 
     transition: transform 0.3s ease;
   }
   
@@ -127,6 +120,7 @@
   .product-button:hover {
     background-color: #c62828;
   }
+  
   
   @media (min-width: 768px) {
     /* Apply these styles only when the screen width is 768px or larger (tablet and above) */

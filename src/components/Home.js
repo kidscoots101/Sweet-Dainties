@@ -67,6 +67,7 @@ const ProductShowcase = ({
     </div>
   );
 };
+
 const CartItem = ({
   item,
   removeFromCart,
