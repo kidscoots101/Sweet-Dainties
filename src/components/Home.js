@@ -6,6 +6,7 @@ import product1 from "../assets/walnut-fruit-cake.png";
 import product2 from "../assets/chewy chocolate.png";
 import product3 from "../assets/assorted-muffins.png";
 import { useNavigate } from "react-router-dom";
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 const ProductShowcase = ({
   products,
@@ -207,6 +208,12 @@ export default function Home() {
         state: { cartItems } 
       });
   };
+  const iconStyle = {
+    fontSize: '24px',
+    margin: '0 10px',
+    color: '#333',
+    transition: 'color 0.3s ease-in-out',
+};
 
   return (
     <div className="home-container">
@@ -236,10 +243,19 @@ export default function Home() {
         />
       </div>
         
-      <footer className="footer" style={{textAlign: "center", fontWeight: 'bold'}}>
-          <p>&copy; 2023 Sweet Dainties</p>
-          <p style={{fontSize: 13}}>Done by Caleb Han</p>
-      </footer>
+      <footer className="footer" style={{ textAlign: 'center' }}>
+    &copy; 2023 Sweet Dainties <br />
+         <div style={{ marginTop: '10px' }}>
+                <a href="https://www.instagram.com/sweet.dainties/s" style={{ ...iconStyle, color: '#e4405f' }}>
+                    <FaInstagram />
+                </a>
+                <a href="https://www.facebook.com" style={{ ...iconStyle, color: '#1877f2' }}>
+                    <FaFacebook />
+                </a>
+            </div>
+          <text style={{fontSize: 14}}>Done by Caleb Han</text>
+</footer>
+
     </div>
   );
 }
