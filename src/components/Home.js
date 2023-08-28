@@ -5,6 +5,7 @@ import cart from '../assets/cart.png'
 import product1 from '../assets/walnut-fruit-cake.png'
 import product2 from '../assets/chewy chocolate.png'
 import product3 from '../assets/assorted-muffins.png'
+import { useNavigate } from 'react-router-dom'
 
 const ProductShowcase = ({ products, cartItems, addToCart, removeFromCart }) => {
     return (
@@ -170,14 +171,18 @@ export default function Home() {
     
         setCartItems(updatedCart.filter(item => item.quantity > 0));
       };
-      
+      const navigate = useNavigate(); // Initialize the useHistory hook
+
+        const handleCartClick = () => {
+            navigate('/cart'); // Navigate to the "/cart" route
+        };
       
     return (
         <div className="home-container">
       <header className="header">
         <img className="logo" src={logo} alt="Product Logo" />
         <div className='cartwrapper'>
-          <img className="cart" src={cart} alt="cart" />
+          <img className="cart" src={cart} alt="cart" onClick={handleCartClick}/>
           <div className='cart-counter' id="cart-counter">{cartItems.length}</div>
           {/* <text className='navcart'>Cart</text> */}
         </div>
