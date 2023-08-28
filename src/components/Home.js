@@ -144,7 +144,7 @@ export default function Home() {
       setCartItems(JSON.parse(storedCartItems));
     }
   }, []);
-  
+
   useEffect(() => {
     // Update the cart counter whenever cart items change
     const cartCount = cartItems.reduce(
@@ -237,22 +237,10 @@ export default function Home() {
           decreaseQuantity={decreaseQuantity}
         />
       </div>
-      <div className="cart-section">
-        {/* <h2>Your Cart</h2> */}
-        {cartItems.map((item) => (
-          <CartItem
-            key={item.id}
-            item={item}
-            removeFromCart={removeFromCart}
-            increaseQuantity={increaseQuantity}
-            decreaseQuantity={decreaseQuantity}
-          />
-        ))}
         <footer>
           2023 © Sweet Dainties <br />
           Powered by Caleb Han's Freelancing services
         </footer>
-      </div>
     </div>
   );
 }
