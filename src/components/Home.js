@@ -238,7 +238,7 @@ export default function Home() {
           decreaseQuantity={decreaseQuantity}
         />
       </div>
-        <footer>
+        <footer className="footer">
           2023 © Sweet Dainties <br />
           Powered by Caleb Han's Freelancing services
         </footer>
