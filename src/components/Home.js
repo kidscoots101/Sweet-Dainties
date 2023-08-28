@@ -147,7 +147,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Update the cart counter whenever cart items change
     const cartCount = cartItems.reduce(
       (total, item) => total + item.quantity,
       0,
@@ -158,7 +157,6 @@ export default function Home() {
   const addToCart = (product) => {
     const existingCartItem = cartItems.find((item) => item.id === product.id);
     if (existingCartItem) {
-      // If the item is already in the cart, increase its quantity
       const updatedCart = cartItems.map((item) =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
@@ -166,7 +164,6 @@ export default function Home() {
       );
       setCartItems(updatedCart);
     } else {
-      // If the item is not in the cart, add it with a quantity of 1
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
@@ -201,7 +198,7 @@ export default function Home() {
 
     setCartItems(updatedCart.filter((item) => item.quantity > 0));
   };
-  const navigate = useNavigate(); // Initialize the useHistory hook
+  const navigate = useNavigate(); 
 
   const handleCartClick = () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));

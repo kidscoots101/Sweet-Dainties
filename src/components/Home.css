@@ -1,4 +1,3 @@
-/* Home.css */
 .home-container {
     background-color: #fffcf4; 
     padding: 20px;
@@ -14,8 +13,8 @@
   }
   
   .logo {
-    max-width: 100px; /* Adjust the width of the logo as needed */
-    margin-bottom: 10px; /* Add spacing between logo and text */
+    max-width: 100px; 
+    margin-bottom: 10px; 
   }
   
   .cart {
@@ -60,7 +59,6 @@
     margin: 0 8px;
   }
   
-  /* Additional styles for the product showcase */
   .product-showcase {
     display: flex;
     flex-wrap: wrap;
@@ -127,14 +125,13 @@
   
   
   @media (min-width: 768px) {
-    /* Apply these styles only when the screen width is 768px or larger (tablet and above) */
     .header {
-      flex-direction: row; /* Revert to row layout for tablet and above */
-      justify-content: space-between; /* Align items to the start and end of the header */
+      flex-direction: row; 
+      justify-content: space-between; 
     }
   
     .logo {
-      margin-bottom: 0; /* Reset margin for tablet and above */
+      margin-bottom: 0; 
     }
     
   }
