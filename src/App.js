@@ -7,12 +7,12 @@ import Product from "./components/Product";
 function App() {
   return (
     <Router>
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/cart" element={<Cart />} />
-    <Route path="/product" element={<Product />} />
-  </Routes>
-  </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product" element={<Product />} />
+      </Routes>
+    </Router>
   );
 }
 

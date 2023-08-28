@@ -6,11 +6,11 @@
   
   .header {
     display: flex;
-    flex-direction: column; /* Change to column layout for mobile */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text */
-    max-width: 1200px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Center the header horizontally */
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
   }
   
   .logo {
@@ -29,6 +29,9 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+}
+.cart-counter {
+    font-weight: bold;
 }
 
 .cart-button.added-to-cart {
