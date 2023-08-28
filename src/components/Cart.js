@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './Cart.css'
+import logo from '../assets/sweet-dainties-logo.jpeg'
+import home from '../assets/home.png'
+
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const storedCartItems = localStorage.getItem("cartItems");
@@ -15,9 +19,26 @@ const Cart = () => {
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
+  const handleCartClick = () => {
+    navigate('/')
+  };
 
   return (
     <div className="cart-container">
+        <header className="header">
+        <img className="logo" src={logo} alt="Product Logo" />
+        <div className="cartwrapper">
+          <img
+            className="home"
+            src={home}
+            alt="home"
+            onClick={handleCartClick}
+          />
+          <div className="cart-counter" id="cart-counter">
+            Home
+          </div>
+        </div>
+      </header>
       <h2 className="cart-title">Your Cart</h2>
       <div className="cart-items-container">
         {cartItems.length === 0 ? (
