@@ -99,6 +99,7 @@ const Cart = () => {
      onClick={openModal}
      className="checkout-button"
    >
+        <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
      Place Order via WhatsApp
    </a>
    
