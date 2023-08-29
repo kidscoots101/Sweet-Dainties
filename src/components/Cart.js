@@ -109,7 +109,7 @@ const Cart = () => {
      overlayClassName="overlay"
      className="modal"
    >
-     <h2>Incomplete Order</h2>
+     <h2>Order Incomplete</h2>
      <p>Please add something to cart to proceed.</p>
      <button onClick={closeModal}>Back to Home</button>
    </Modal>
