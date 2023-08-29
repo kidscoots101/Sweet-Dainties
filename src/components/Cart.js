@@ -4,7 +4,7 @@ import './Cart.css'
 import logo from '../assets/sweet-dainties-logo.jpeg'
 import home from '../assets/home.png'
 import { FaWhatsapp } from "react-icons/fa";
-
+import Modal from "react-modal";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -41,7 +41,15 @@ const Cart = () => {
     const phoneNumber = "6596906771";
     return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
   };
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="cart-container">
@@ -82,7 +90,31 @@ const Cart = () => {
         )}
        <div className="checkout">
   <p className="checkout-total">Total Price: ${calculateTotalPrice()}</p>
-  <a
+  {cartItems.length === 0 ? (
+    <div>
+
+     <a
+     href="#"
+     onClick={openModal}
+     className="checkout-button"
+   >
+     Place Order via WhatsApp
+   </a>
+   
+   <Modal
+     isOpen={isModalOpen}
+     onRequestClose={closeModal}
+     contentLabel="Order via WhatsApp Modal"
+     overlayClassName="overlay"
+     className="modal"
+   >
+     <h2>Invalid Order</h2>
+     <p>Please add something to cart to proceed.</p>
+     <button onClick={closeModal}>Close Modal</button>
+   </Modal>
+   </div>
+  ) : (
+    <a
     href={createWhatsAppLink()}
     target="_blank"
     rel="noopener noreferrer"
@@ -91,6 +123,7 @@ const Cart = () => {
     <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
     Place Order via WhatsApp
   </a>
+  )}
 </div>
       </div>
     </div>
