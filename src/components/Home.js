@@ -185,6 +185,7 @@ export default function Home() {
     transition: 'color 0.3s ease-in-out',
 };
 
+
   return (
     <div className="home-container">
       <header className="header">

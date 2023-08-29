@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Cart.css'
 import logo from '../assets/sweet-dainties-logo.jpeg'
 import home from '../assets/home.png'
+import { FaWhatsapp } from "react-icons/fa";
 
 
 const Cart = () => {
@@ -22,6 +23,25 @@ const Cart = () => {
   const handleCartClick = () => {
     navigate('/')
   };
+
+  const createWhatsAppLink = () => {
+    const itemDetails = cartItems.map(
+      (item, index) =>
+        `${index + 1}. ${item.name} - Price: $${item.price}, Quantity: ${item.quantity}`
+    );
+  
+    const formattedItemDetails = itemDetails.join("\n");
+  
+    const message = `Hi Sweet Dainties,\nI would like to order the following.\nI have ${cartItems.length} item(s) in my cart:\n${formattedItemDetails}`;
+  
+    const totalPriceMessage = `\nTotal Price: $${calculateTotalPrice()}`;
+  
+    const encodedMessage = encodeURIComponent(message + totalPriceMessage);
+  
+    const phoneNumber = "6596906771";
+    return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
+  };
+  
 
   return (
     <div className="cart-container">
@@ -57,9 +77,21 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-            <p className="total-price">Total Price: ${calculateTotalPrice()}</p>
+            {/* <p className="total-price">Subtotal: ${calculateTotalPrice()}</p> */}
           </div>
         )}
+       <div className="checkout">
+  <p className="checkout-total">Total Price: ${calculateTotalPrice()}</p>
+  <a
+    href={createWhatsAppLink()}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="checkout-button"
+  >
+    <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
+    Place Order via WhatsApp
+  </a>
+</div>
       </div>
     </div>
   );
