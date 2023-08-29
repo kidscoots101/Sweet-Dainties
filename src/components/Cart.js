@@ -49,6 +49,7 @@ const Cart = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate('/')
   };
 
   return (
@@ -110,7 +111,7 @@ const Cart = () => {
    >
      <h2>Invalid Order</h2>
      <p>Please add something to cart to proceed.</p>
-     <button onClick={closeModal}>Close Modal</button>
+     <button onClick={closeModal}>Back to Home</button>
    </Modal>
    </div>
   ) : (
