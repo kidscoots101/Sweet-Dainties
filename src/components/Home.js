@@ -224,7 +224,8 @@ export default function Home() {
                     <FaFacebook />
                 </a>
             </div>
-          <text style={{fontSize: 14, fontWeight: '500'}}>Done by Caleb Han</text>
+            <text style={{fontSize: 14, fontWeight: '500'}}>Done by </text>
+          <a style={{fontSize: 14, fontWeight: '500', color: 'black'}} href="https://www.linkedin.com/in/caleb-han-792349235/">Caleb Han</a>
 </footer>
 
     </div>
