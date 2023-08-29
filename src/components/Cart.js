@@ -38,7 +38,7 @@ const Cart = () => {
   
     const encodedMessage = encodeURIComponent(message + totalPriceMessage);
   
-    const phoneNumber = "6596906771";
+    const phoneNumber = process.env.PHONE_NUMBER;
     return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
   };
   
