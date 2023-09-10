@@ -40,7 +40,7 @@ const Cart = () => {
   
     const formattedItemDetails = itemDetails.join("\n");
   
-    const message = `Hi Sweet Dainties,\nI would like to order the following.\nI have *${cartItems.length}* item(s) in my cart:\n${formattedItemDetails}\nRemarks:\n*${remarks}*`;
+    const message = `Hi Sweet Dainties,\nI would like to order the following.\nI have *${cartItems.length}* item(s) in my cart:\n${formattedItemDetails}\nRemarks:\n- *${remarks}*`;
   
     const totalPriceMessage = `\nTotal Price: $${calculateTotalPrice()}`;
   
