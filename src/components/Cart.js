@@ -5,6 +5,8 @@ import logo from '../assets/sweet-dainties-logo.jpeg'
 import home from '../assets/home.png'
 import { FaWhatsapp } from "react-icons/fa";
 import Modal from "react-modal";
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
+
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -24,6 +26,12 @@ const Cart = () => {
     navigate('/')
   };
 
+  const [remarks, setRemarks] = useState('');
+
+  const handleInputChange = (event) => {
+    setRemarks(event.target.value);
+  };
+
   const createWhatsAppLink = () => {
     const itemDetails = cartItems.map(
       (item, index) =>
@@ -32,7 +40,7 @@ const Cart = () => {
   
     const formattedItemDetails = itemDetails.join("\n");
   
-    const message = `Hi Sweet Dainties,\nI would like to order the following.\nI have ${cartItems.length} item(s) in my cart:\n${formattedItemDetails}`;
+    const message = `Hi Sweet Dainties,\nI would like to order the following.\nI have *${cartItems.length}* item(s) in my cart:\n${formattedItemDetails}\nRemarks:\n*${remarks}*`;
   
     const totalPriceMessage = `\nTotal Price: $${calculateTotalPrice()}`;
   
@@ -51,7 +59,12 @@ const Cart = () => {
     setIsModalOpen(false);
     navigate('/')
   };
-
+  const iconStyle = {
+    fontSize: '24px',
+    margin: '0 10px',
+    color: '#333',
+    transition: 'color 0.3s ease-in-out',
+};
   return (
     <div className="cart-container">
         <header className="header">
@@ -86,14 +99,18 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-            {/* <p className="total-price">Subtotal: ${calculateTotalPrice()}</p> */}
           </div>
         )}
+    <div class="remarks-container">
+    <h2 className="cart-title">Remarks</h2>
+
+      <input type="text" id="remarks" name="remarks" class="remarks-input" placeholder="Any remarks? (e.g. Use less sugar.)"  value={remarks}
+        onChange={handleInputChange} />      
+    </div>
        <div className="checkout">
-  <p className="checkout-total">Total Price: ${calculateTotalPrice()}</p>
+  <p className="checkout-total">Grand Total: ${calculateTotalPrice()}</p>
   {cartItems.length === 0 ? (
     <div>
-
      <a
      href="#"
      onClick={openModal}
@@ -125,9 +142,24 @@ const Cart = () => {
     <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
     Place Order via WhatsApp
   </a>
+  
   )}
 </div>
       </div>
+      <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
+    &copy; 2023 Sweet Dainties <br />
+         <div style={{ marginTop: '10px' }}>
+                <a href="https://www.instagram.com/sweet.dainties/" style={{ ...iconStyle, color: '#e4405f' }}>
+                    <FaInstagram />
+                </a>
+                <a href="https://www.facebook.com" style={{ ...iconStyle, color: '#1877f2' }}>
+                    <FaFacebook />
+                </a>
+            </div>
+            <text style={{fontSize: 14, fontWeight: '500'}}>Done by </text>
+          <a style={{fontSize: 14, fontWeight: '500', color: 'black'}} href="https://www.linkedin.com/in/caleb-han-792349235/">Caleb Han</a>
+</footer>
+
     </div>
   );
 };
