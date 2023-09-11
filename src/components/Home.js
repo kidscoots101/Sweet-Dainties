@@ -217,10 +217,10 @@ export default function Home() {
       <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
     &copy; 2023 Sweet Dainties <br />
          <div style={{ marginTop: '10px' }}>
-                <a href="https://www.instagram.com/sweet.dainties/" style={{ ...iconStyle, color: '#e4405f' }}>
+                <a href="https://www.instagram.com/sweet.dainties/" target="_blank" style={{ ...iconStyle, color: '#e4405f' }}>
                     <FaInstagram />
                 </a>
-                <a href="https://www.facebook.com" style={{ ...iconStyle, color: '#1877f2' }}>
+                <a href="https://www.facebook.com" target="_blank" style={{ ...iconStyle, color: '#1877f2' }}>
                     <FaFacebook />
                 </a>
             </div>
