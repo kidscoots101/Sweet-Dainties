@@ -189,7 +189,9 @@ export default function Home() {
   return (
     <div className="home-container">
       <header className="header">
+      <a href="https://www.instagram.com/sweet.dainties/" target="_blank">
         <img className="logo" src={logo} alt="Product Logo" />
+      </a>
         <div className="cartwrapper">
           <img
             className="cart"
