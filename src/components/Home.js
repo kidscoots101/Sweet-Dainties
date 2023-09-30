@@ -9,7 +9,7 @@ import product4 from '../assets/coconut-jelly.jpeg'
 import product5 from '../assets/osmanthus-jelly.jpeg'
 import product6 from '../assets/walnut-choc.jpeg'
 import { useNavigate } from "react-router-dom";
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 const ProductShowcase = ({
   products,
@@ -222,8 +222,8 @@ export default function Home() {
                 <a href="https://www.instagram.com/sweet.dainties/" target="_blank" style={{ ...iconStyle, color: '#e4405f' }}>
                     <FaInstagram />
                 </a>
-                <a href="https://www.facebook.com" target="_blank" style={{ ...iconStyle, color: '#1877f2' }}>
-                    <FaFacebook />
+                <a href="https://www.whatsapp.com/" target="_blank" style={{ ...iconStyle, color:'#25D366' }}>
+                    <FaWhatsapp />
                 </a>
             </div>
             <text style={{fontSize: 14, fontWeight: '500'}}>Done by </text>
