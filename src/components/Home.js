@@ -144,7 +144,7 @@ export default function Home() {
       item.id === productId
         ? {
             ...item,
-            quantity: decreaseQuantity ? item.quantity - 1 : item.quantity,
+            quantity: decreaseQuantity ? item.quantity - item.quantity : item.quantity,
           }
         : item,
     );
