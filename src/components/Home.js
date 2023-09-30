@@ -16,6 +16,7 @@ const ProductShowcase = ({
   cartItems,
   addToCart,
   removeFromCart,
+  removeremoveFromCart
 }) => {
   return (
     <div className="product-showcase">
@@ -38,7 +39,7 @@ const ProductShowcase = ({
                   }`}
                   onClick={() => {
                     if (quantityInCart > 0) {
-                      removeFromCart(product.id, true);
+                      removeremoveFromCart(product.id, true);
                     } else {
                       addToCart(product);
                     }
@@ -131,11 +132,13 @@ export default function Home() {
       const updatedCart = cartItems.map((item) =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
-          : item,
+          : item
       );
       setCartItems(updatedCart);
+      localStorage.setItem("cartItems", JSON.stringify(updatedCart)); 
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      localStorage.setItem("cartItems", JSON.stringify([...cartItems, { ...product, quantity: 1 }]));
     }
   };
 
@@ -144,13 +147,28 @@ export default function Home() {
       item.id === productId
         ? {
             ...item,
+            quantity: decreaseQuantity ? item.quantity - 1 : item.quantity,
+          }
+        : item,
+    );
+  
+    setCartItems(updatedCart.filter((item) => item.quantity > 0));
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  };
+  const removeremoveFromCart = (productId, decreaseQuantity = false) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === productId
+        ? {
+            ...item,
             quantity: decreaseQuantity ? item.quantity - item.quantity : item.quantity,
           }
         : item,
     );
-
+  
     setCartItems(updatedCart.filter((item) => item.quantity > 0));
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   };
+  
 
   const increaseQuantity = (productId) => {
     const updatedCart = cartItems.map((item) =>
@@ -213,6 +231,7 @@ export default function Home() {
           removeFromCart={removeFromCart}
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
+          removeremoveFromCart={removeremoveFromCart}
         />
       </div>
         
