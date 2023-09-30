@@ -217,7 +217,7 @@ export default function Home() {
       </div>
         
       <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
-    &copy; 2023 Sweet Dainties <br />
+    &copy; 2023 Sweet Dainties Confectionery<br />
          <div style={{ marginTop: '10px' }}>
                 <a href="https://www.instagram.com/sweet.dainties/" target="_blank" style={{ ...iconStyle, color: '#e4405f' }}>
                     <FaInstagram />
