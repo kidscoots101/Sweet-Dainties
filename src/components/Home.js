@@ -207,9 +207,9 @@ export default function Home() {
   return (
     <div className="home-container">
       <header className="header">
-      <a href="https://www.instagram.com/sweet.dainties/" target="_blank">
-        <img className="logo" src={logo} alt="Product Logo" />
-      </a>
+        <a href="https://www.instagram.com/sweet.dainties/" target="_blank">
+          <img className="logo" src={logo} alt="Product Logo" />
+        </a>
         <div className="cartwrapper">
           <img
             className="cart"
@@ -224,7 +224,7 @@ export default function Home() {
         </div>
       </header>
       <div className="product-section">
-      <ProductShowcase
+        <ProductShowcase
           products={products}
           cartItems={cartItems}
           addToCart={addToCart}
@@ -234,21 +234,37 @@ export default function Home() {
           removeremoveFromCart={removeremoveFromCart}
         />
       </div>
-        
-      <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
-    &copy; 2023 Sweet Dainties Confectionery<br />
-         <div style={{ marginTop: '10px' }}>
-                <a href="https://www.instagram.com/sweet.dainties/" target="_blank" style={{ ...iconStyle, color: '#e4405f' }}>
-                    <FaInstagram />
-                </a>
-                <a href="https://www.whatsapp.com/" target="_blank" style={{ ...iconStyle, color:'#25D366' }}>
-                    <FaWhatsapp />
-                </a>
-            </div>
-            <text style={{fontSize: 14, fontWeight: '500'}}>Done by </text>
-          <a style={{fontSize: 14, fontWeight: '500', color: 'black'}} target="_blank" href="https://www.linkedin.com/in/caleb-han-792349235/">Caleb Han</a>
-</footer>
 
+      <footer
+        className="footer"
+        style={{ textAlign: "center", fontWeight: "600" }}
+      >
+        &copy; 2023 Sweet Dainties Confectionery
+        <div style={{ marginTop: "10px" }}>
+          <a
+            href="https://www.instagram.com/sweet.dainties/"
+            target="_blank"
+            style={{ ...iconStyle, color: "#e4405f" }}
+          >
+            <FaInstagram />
+          </a>
+          {/* <a
+            href="https://www.whatsapp.com/"
+            target="_blank"
+            style={{ ...iconStyle, color: "#25D366" }}
+          >
+            <FaWhatsapp />
+          </a> */}
+        </div>
+        <text style={{ fontSize: 14, fontWeight: "500" }}>Done by </text>
+        <a
+          style={{ fontSize: 14, fontWeight: "500", color: "black" }}
+          target="_blank"
+          href="https://www.linkedin.com/in/caleb-han-792349235/"
+        >
+          Caleb Han
+        </a>
+      </footer>
     </div>
   );
 }

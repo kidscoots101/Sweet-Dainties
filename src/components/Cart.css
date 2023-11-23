@@ -132,7 +132,7 @@
   }
   
   .remarks-input {
-    width: calc(100% - 30px); /* Subtract the padding (15px * 2) and border (1px * 2) width */
+    width: calc(100% - 30px);
     padding: 15px;
     font-size: 16px;
     border: 1px solid #ccc;

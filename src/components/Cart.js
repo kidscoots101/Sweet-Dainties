@@ -67,7 +67,7 @@ const Cart = () => {
 };
   return (
     <div className="cart-container">
-        <header className="header">
+      <header className="header">
         <img className="logo" src={logo} alt="Product Logo" />
         <div className="cartwrapper">
           <img
@@ -101,65 +101,80 @@ const Cart = () => {
             ))}
           </div>
         )}
-    <div class="remarks-container">
-    <h2 className="cart-title">Remarks</h2>
+        <div class="remarks-container">
+          <h2 className="cart-title">Remarks</h2>
 
-      <input type="text" id="remarks" name="remarks" class="remarks-input" placeholder="Any remarks? (e.g. Use less sugar.)"  value={remarks}
-        onChange={handleInputChange} />      
-    </div>
-       <div className="checkout">
-  <p className="checkout-total">Grand Total: ${calculateTotalPrice()}</p>
-  {cartItems.length === 0 ? (
-    <div>
-     <a
-     href="#"
-     onClick={openModal}
-     className="checkout-button"
-   >
-        <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
-     Place Order via WhatsApp
-   </a>
-   
-   <Modal
-     isOpen={isModalOpen}
-     onRequestClose={closeModal}
-     contentLabel="Order via WhatsApp Modal"
-     overlayClassName="overlay"
-     className="modal"
-   >
-     <h2>Order Incomplete</h2>
-     <p>Please add something to cart to proceed.</p>
-     <button onClick={closeModal}>Back to Home</button>
-   </Modal>
-   </div>
-  ) : (
-    <a
-    href={createWhatsAppLink()}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="checkout-button"
-  >
-    <FaWhatsapp style={{marginRight: 10, alignSelf: 'center'}}/>
-    Place Order via WhatsApp
-  </a>
-  
-  )}
-</div>
-      </div>
-      <footer className="footer" style={{ textAlign: 'center', fontWeight :'600' }}>
-    &copy; 2023 Sweet Dainties <br />
-         <div style={{ marginTop: '10px' }}>
-                <a href="https://www.instagram.com/sweet.dainties/" style={{ ...iconStyle, color: '#e4405f' }}>
-                    <FaInstagram />
-                </a>
-                <a href="https://www.facebook.com" style={{ ...iconStyle, color: '#1877f2' }}>
-                    <FaFacebook />
-                </a>
+          <input
+            type="text"
+            id="remarks"
+            name="remarks"
+            class="remarks-input"
+            placeholder="Any remarks? (e.g. Use less sugar.)"
+            value={remarks}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="checkout">
+          <p className="checkout-total">
+            Grand Total: ${calculateTotalPrice()}
+          </p>
+          {cartItems.length === 0 ? (
+            <div>
+              <a href="#" onClick={openModal} className="checkout-button">
+                <FaWhatsapp style={{ marginRight: 10, alignSelf: "center" }} />
+                Place Order via WhatsApp
+              </a>
+
+              <Modal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                contentLabel="Order via WhatsApp Modal"
+                overlayClassName="overlay"
+                className="modal"
+              >
+                <h2>Order Incomplete</h2>
+                <p>Please add something to cart to proceed.</p>
+                <button onClick={closeModal}>Back to Home</button>
+              </Modal>
             </div>
-            <text style={{fontSize: 14, fontWeight: '500'}}>Done by </text>
-          <a style={{fontSize: 14, fontWeight: '500', color: 'black'}} href="https://www.linkedin.com/in/caleb-han-792349235/">Caleb Han</a>
-</footer>
-
+          ) : (
+            <a
+              href={createWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="checkout-button"
+            >
+              <FaWhatsapp style={{ marginRight: 10, alignSelf: "center" }} />
+              Place Order via WhatsApp
+            </a>
+          )}
+        </div>
+      </div>
+      <footer
+        className="footer"
+        style={{ textAlign: "center", fontWeight: "600" }}
+      >
+        &copy; 2023 Sweet Dainties Confectionery
+        <br />
+        <div style={{ marginTop: "10px" }}>
+          <a
+            href="https://www.instagram.com/sweet.dainties/"
+            style={{ ...iconStyle, color: "#e4405f" }}
+          >
+            <FaInstagram />
+          </a>
+          {/* <a href="https://www.facebook.com" style={{ ...iconStyle, color: '#1877f2' }}>
+                    <FaFacebook />
+                </a> */}
+        </div>
+        <text style={{ fontSize: 14, fontWeight: "500" }}>Done by </text>
+        <a
+          style={{ fontSize: 14, fontWeight: "500", color: "black" }}
+          href="https://www.linkedin.com/in/caleb-han-792349235/"
+        >
+          Caleb Han
+        </a>
+      </footer>
     </div>
   );
 };
